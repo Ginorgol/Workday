@@ -1,0 +1,75 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Dell - ServiceNow++{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="{{ url_for('static', filename='icons/dell_alt.ico') }}" type="image/x-icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style media="screen">
+	#myProgress {
+		width: 100%;
+		background-color: grey;
+	}
+	#myBar {
+		width: 1%;
+		height: 30px;
+		background-color: green;
+	}
+	</style>
+</head>
+
+
+
+<body>
+	<div class="jumbotron text-center" style="background-color: #0083cb; color: #ffffff">
+		<div class="row">
+			<div class="col-lg-5">
+				<img src="{{ url_for('static', filename='icons/Dell_1.jpg') }}" style="width:30%" alt="" >
+			</div>
+			<div class="col-lg-6">
+				<h1>ServiceNow++</h1>
+				<h3>L1/L2/L3 - Automation</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<form action="/results" method="post" style="margin-top: 45px; padding:0 80px 70px 80px;">
+
+			<div class="row">
+				<div class="form-group">
+						<input type="value" class="form-control center-block" name="description" placeholder="Hi, please describe your issue and we'll raise an incident for you" required>
+				</div>
+			</div>
+
+			<br/>
+			<button type="submit" class="btn btn-primary center-block">Submit</button>
+
+		</form>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script>
+		function myFunc(obj) {
+			document.getElementById(obj).style.color = "red";
+			var x = document.getElementById(obj).innerHTML
+			document.getElementById(obj).innerHTML = x + "( Select the closest possible value )";
+		}
+	</script>
+</body>
+
+
+
+</html>
+{% endblock %}
